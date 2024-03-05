@@ -1,4 +1,4 @@
-import data from "./data.json" assert { type: "json" };
+// import data from "./data.json" assert { type: "json" };
 
 // function displayData(datas) {
 //     const caintainer = document.getElementById('caintainer')
@@ -21,31 +21,36 @@ import data from "./data.json" assert { type: "json" };
 // }
 
 
-fetch("./data.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const frame = document.getElementById("loop");
-    data.map((element) => {
-      console.log(element);
-      let newDiv = document.createElement("div");
-      newDiv.id = element.id;
-      newDiv.className = "row";
-      newDiv.innerHTML = `
+// fetch("./data.json")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const frame = document.getElementById("loop");
+//     data.map((element) => {
+//       console.log(element);
+//       let newDiv = document.createElement("div");
+//       newDiv.id = element.id;
+//       newDiv.className = "col-6";
+//       newDiv.innerHTML = `
 
-            <div class="col-6">
-
-              <div class="">
-                <a href="lecture.html" class="" style="text-decoration: none;">
-                  <div class="card shadow-sm">
-                      <img src="${element.chaine}" alt="..." class="img-fluid">
-                  </div>
-                </a>
-              </div>
-
-            </div>`;
+//             <div class="">
+//                 <a href="lecture.html" class="" style="text-decoration: none;">
+//                   <div class="card shadow-sm">
+//                       <img src="${element.chaine}" alt="..." class="img-fluid">
+//                   </div>
+//                 </a>
+//             </div>`;
 
           
-      frame.appendChild(newDiv);
-    });
-  })
-.catch((error) => console.error("Error loading JSON file", error)); 
+//       frame.appendChild(newDiv);
+//     });
+//   })
+// .catch((error) => console.error("Error loading JSON file", error)); 
+
+
+function evtele() {
+  document.getElementById('myVid').src='https://tgn.bozztv.com/ssh101/ssh101/evtele/playlist.m3u8';
+} 
+
+function evitele() {
+  document.getElementById('myVid').src='https://stream.telepack.net/evitv/index.m3u8';
+}

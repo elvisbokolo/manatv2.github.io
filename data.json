@@ -4,5 +4,12 @@
     "name": "Cinéma",
     "image": "Voire tout",
     "chaine": "assets/img/evtele.png"
+  },
+
+  {
+    "id": 2,
+    "name": "Cinéma",
+    "image": "Voire tout",
+    "chaine": "assets/img/evi.png"
   }
 ]
