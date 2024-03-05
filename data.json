@@ -2,16 +2,7 @@
   {
     "id": 1,
     "name": "Cinéma",
-    "desc": "Voire tout"
-  },
-  {
-    "id": 2,
-    "name": "Série",
-    "desc": "Voire tout"
-  },
-  {
-    "id": 3,
-    "name": "Jeunesse",
-    "desc": "Voire tout"
+    "image": "Voire tout",
+    "chaine": "assets/img/evtele.png"
   }
 ]
