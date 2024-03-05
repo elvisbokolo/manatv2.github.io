@@ -29,25 +29,23 @@ fetch("./data.json")
       console.log(element);
       let newDiv = document.createElement("div");
       newDiv.id = element.id;
-      newDiv.className = "container";
+      newDiv.className = "row";
       newDiv.innerHTML = `
-           <div class="d-flex justify-content-between">
-              <h3 class="fw-bold"><b></b>${element.name}</h3>
-              <h5 class="text-info mr-2"><a href="lecture.php" class="" style="text-decoration: none;">${element.desc} <i class="fas fa-angle-right" style="font-size: 20px;"></i></a></h5>
-          </div>
 
-            <div id="owl-demo5" class="owl-carousel owl-theme owl-img-responsive">
+            <div class="col-6">
 
-              <div class="item">
-                <a href="lecture.php" class="" style="text-decoration: none;">
-                  <div class="card shadow-sm" style="height: 100px;">
-                      <img src="assets/img/evtele.png" alt="..." class="img-fluid">
+              <div class="">
+                <a href="lecture.html" class="" style="text-decoration: none;">
+                  <div class="card shadow-sm">
+                      <img src="${element.chaine}" alt="..." class="img-fluid">
                   </div>
                 </a>
               </div>
 
             </div>`;
+
+          
       frame.appendChild(newDiv);
     });
   })
-.catch((error) => console.error("Error loading JSON file", error));  
+.catch((error) => console.error("Error loading JSON file", error)); 
