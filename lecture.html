@@ -138,17 +138,7 @@
 		<div class="main-panel">
 			<div class="content">
 				<div class="large-12 columns">
-		          <video
-		          id="my-video"
-		          class="video-js"
-		          controls=true,
-		          preLoad="auto"
-		          width="360"
-		          height="220"
-		          data-setup="{}"
-		          >
-		          <source  src="https://tgn.bozztv.com/ssh101/ssh101/evtele/playlist.m3u8" type="application/x-mpegURL">
-		              </video>
+		          <video id="video" controls class="content w-100"></video>
 		          </div>
 
 		          <div class="d-flex justify-content-between mt-3">
@@ -263,6 +253,29 @@
 
 	<!-- Atlantis JS -->
 	<script src="assets/js/atlantis.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+	<script>
+    if(Hls.isSupported())
+    {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://tgn.bozztv.com/ssh101/ssh101/evtele/playlist.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl'))
+    {
+        video.src = 'https://tgn.bozztv.com/ssh101/ssh101/evtele/playlist.m3u8';
+        video.addEventListener('canplay',function()
+        {
+            video.play();
+        });
+    }
+    </script>
 
 	<script>
 		$(document).ready(function() {
